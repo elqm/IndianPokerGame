@@ -3,7 +3,7 @@ package com.greedy.section01.poker;
 import java.util.Scanner;
 
 public class Application {
-
+	
 	public static void main(String[] args) {
 		
 		Application app = new Application();
@@ -14,32 +14,32 @@ public class Application {
 			int num2 = (int) ((Math.random() * 10) + 1);
 
 			Scanner sc = new Scanner(System.in);
-			System.out.println("===== 카드 게임을 시작합니다. =====");
-			System.out.println("1. 운명을 건 카드 뽑기");
-			System.out.println("2. 느낌이 좋다. 승부다!!");
-			System.out.println("3. 느낌은 개뿔. 다음 기회를 노린다...");
-			System.out.println("9. 카드 게임 종료");
+			System.out.println("=========== 인디언 포커 ===========");
+			System.out.println("|      1. 운명을 건 카드 뽑기       |");
+			System.out.println("|     2. 느낌이 좋다. 승부다!!      |");
+			System.out.println("|3. 느낌은 개뿔. 다음 기회를 노린다...|");
+			System.out.println("|        9. 카드 게임 종료         |");
+			System.out.println("=================================");
 			System.out.print("메뉴 선택 : ");
 			int no = sc.nextInt();
-			System.out.println("");
 			
 			switch(no) {
 				case 1 :
-					app.drawCard(num1);
-					break;
+						app.drawCard(num1);
+						break;
 				case 2 :
-					app.gameCard(num1, num2);
-					break;
+						app.gameCard(num1, num2);
+						num1 = (int) ((Math.random() * 10) + 1);
+						break;
 				case 3 :
 					app.dieCard();
+					num1 = (int) ((Math.random() * 10) + 1);
 					break;
 				case 9 :
-					System.out.println("[[카드 게임을 종료합니다.]]");
-					System.out.println("");
+					System.out.println("[ 카드 게임을 종료합니다. ]");
 					return;
 				default :
-					System.out.println("[[잘못된 번호를 선택하셨습니다.]]");
-					System.out.println("");
+					System.out.println("[ 잘못된 번호를 선택하셨습니다. ]");
 					break;
 			}
 			
@@ -100,27 +100,26 @@ public class Application {
 	public void gameCard(int num1, int num2) {
 		
 		if(num1 > num2) {
-			System.out.println("딜러 : " + num1);
-			System.out.println("유저 : " + num2);
-			System.out.println("딜러가 이겼습니다.");
-			System.out.println("");
+			System.out.println("[ 딜러 : " + num1 + " ]");
+			System.out.println("[ 유저 : " + num2 + " ]");
+			System.out.println("[ 딜러가 이겼습니다. ]");
+//			System.out.println("[ 딜러 : " + (++sum1) + "승 / 유저 : " + sum2 + "승 ]");
+			
 		} else if(num1 == num2) {
-			System.out.println("딜러 : " + num1);
-			System.out.println("유저 : " + num2);
-			System.out.println("비겼습니다.");
-			System.out.println("");
+			System.out.println("[ 딜러 : " + num1 + " ]");
+			System.out.println("[ 유저 : " + num2 + " ]");
+			System.out.println("[ 비겼습니다. ]");
 		} else {
-			System.out.println("딜러 : " + num1);
-			System.out.println("유저 : " + num2);
-			System.out.println("유저가 이겼습니다!!!");
-			System.out.println("");
+			System.out.println("[ 딜러 : " + num1 + " ]");
+			System.out.println("[ 유저 : " + num2 + " ]");
+			System.out.println("[ 유저가 이겼습니다!!! ]");
+//			System.out.println("[ 딜러 : " + sum1 + "승 / 유저 : " + (++sum2) + "승 ]");
 		}
 		
 	}
 	
 	public void dieCard() {
-		System.out.println("[[당신은 겁쟁이군요. 집에 가서 잠이나 자세요~]]");
-		System.out.println("");
+		System.out.println("[ 당신은 배짱이 물벼락만 하군요. 겁쟁이는 돌아가세요~~ ]");
 	}
 
 

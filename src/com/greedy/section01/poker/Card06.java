@@ -4,8 +4,7 @@ public class Card06 extends Card {
 
 	@Override
 	public void select() {
-		System.out.println("[[딜러가 카드 6을 뽑았습니다.]]");
-		System.out.println("");
+		System.out.println("[ 딜러가 카드 6을 뽑았습니다. ]");
 	}
 	
 }
